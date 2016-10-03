@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Images of album <%= @album.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td><%= image_tag image.img.url(:thumb) %></td>
+        <td><%= link_to 'Show', album_image_path(@album, image) %></td>
+        <td><%= link_to 'Edit', edit_album_image_path(@album,image) %></td>
+        <td><%= link_to 'Destroy', album_image_url(@album, image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Image', new_album_image_path(@album) %> |
+<%= link_to 'Back To Album', album_path(@album) %>

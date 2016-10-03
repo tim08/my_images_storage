@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @album.name %>
+</p>
+
+<p>
+  <%= link_to 'All images on this album', album_images_url(@album) %>
+</p>
+
+<p>
+  <%= link_to 'Add new image', new_album_image_url(@album) %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back To All My Albums', albums_path %>
